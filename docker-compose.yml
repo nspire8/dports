@@ -1,0 +1,13 @@
+---
+version: '3.4'
+
+services:
+  ports:
+    image: d3fk/python_in_bottle
+    command: "python3 /code/app.py"
+    container_name: ports
+    restart: unless-stopped
+    volumes: 
+      -  .:/code
+    ports:
+      - "9009:80"
